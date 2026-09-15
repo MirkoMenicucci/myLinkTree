@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Mirko · Studio Biblico Gratuito</title>
+  <meta name="description" content="Uno studio biblico gratuito, senza impegno, quando e come vuoi tu.">
+  <meta name="theme-color" content="#0B4F8A">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="bg-scene" aria-hidden="true">
+    <span class="blob blob-a"></span>
+    <span class="blob blob-b"></span>
+    <span class="blob blob-c"></span>
+  </div>
+
+  <div class="hero-banner" data-animate>
+    <img src="assets/mirko.jpg" alt="Foto di Mirko">
+    <div class="hero-banner-fade"></div>
+  </div>
+
+  <main class="page">
+
+    <section class="hero" data-animate>
+      <h1 class="hero-title">Ciao, sono <span id="hero-name">Mirko</span></h1>
+      <p class="hero-subtitle" id="hero-subtitle">
+        Leggo la Bibbia con chi ha voglia di capirla. Senza fretta e senza impegno.
+      </p>
+    </section>
+
+    <section class="offer-card" id="study-card" data-animate>
+      <span class="offer-tag">IN EVIDENZA</span>
+      <h2 id="offer-title">Iniziare uno studio biblico</h2>
+      <p id="offer-description">Gratuito, di persona o online. Decidi tu quando e per quanto tempo.</p>
+
+      <p class="offer-subtitle" id="offer-subtitle">Lo sapevi che?</p>
+
+      <span class="offer-label" id="offer-advice-intro">La Bibbia dà consigli su</span>
+      <div class="offer-chips" id="offer-advice-list"></div>
+
+      <span class="offer-label offer-label-spaced" id="offer-questions-intro">Risponde a domande come</span>
+      <ul class="offer-list" id="offer-questions-list"></ul>
+
+      <a id="video-cta" class="video-inline" href="#" target="_blank" rel="noopener">
+        <span class="video-icon"><i class="fa-solid fa-play"></i></span>
+        <div class="video-text">
+          <span class="video-eyebrow">Guarda il video</span>
+          <span id="video-cta-text">Come si svolge uno studio biblico</span>
+        </div>
+      </a>
+
+      <div class="contact-inline">
+        <a id="whatsapp-link-alt" class="btn btn-whatsapp btn-full" href="#" target="_blank" rel="noopener">
+          <i class="fa-brands fa-whatsapp"></i> WhatsApp
+        </a>
+
+        <div class="contact-lines">
+          <a id="email-link-alt" class="contact-line" href="#">
+            <i class="fa-solid fa-envelope"></i> <span id="email-text-alt">email@esempio.it</span>
+          </a>
+
+          <a id="phone-link-alt" class="contact-line" href="#">
+            <i class="fa-solid fa-phone"></i> <span id="phone-text-alt">Telefono</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="offer-card event-card" id="event-card" data-animate hidden>
+      <div class="event-meta">
+        <span class="offer-tag" id="event-title">Titolo evento</span>
+        <span class="event-date-badge">
+          <i class="fa-solid fa-calendar-days"></i>
+          <span id="event-date">Data evento</span>
+        </span>
+      </div>
+
+      <h2 class="event-theme-title" id="event-theme">Tema dell'evento</h2>
+
+      <div class="cta-row" id="event-links">
+        <a id="event-article-link" class="btn btn-secondary" href="#" target="_blank" rel="noopener">
+          <i class="fa-solid fa-newspaper"></i> Articolo
+        </a>
+        <a id="event-nearest-link" class="btn btn-primary" href="#" target="_blank" rel="noopener">
+          <i class="fa-solid fa-location-dot"></i> Evento più vicino
+        </a>
+      </div>
+    </section>
+
+    <a class="resource-card" data-animate id="resource-card" href="https://www.jw.org/it" target="_blank"
+      rel="noopener">
+      <span class="resource-icon"><i class="fa-solid fa-globe"></i></span>
+      <div class="resource-text">
+        <h3 id="resource-title">jw.org</h3>
+        <p id="resource-subtitle">Bibbia, articoli e video online</p>
+      </div>
+      <i class="fa-solid fa-arrow-up-right-from-square resource-arrow"></i>
+    </a>
+
+    <section class="contact-section" id="contatti" data-animate>
+      <p class="contact-heading">Scrivimi o chiamami</p>
+
+      <a id="whatsapp-link" class="btn btn-whatsapp btn-full" href="#" target="_blank" rel="noopener">
+        <i class="fa-brands fa-whatsapp"></i> WhatsApp
+      </a>
+
+      <div class="contact-lines">
+        <a id="email-link" class="contact-line" href="#">
+          <i class="fa-solid fa-envelope"></i> <span id="email-text">email@esempio.it</span>
+        </a>
+
+        <a id="phone-link" class="contact-line" href="#">
+          <i class="fa-solid fa-phone"></i> <span id="phone-text">Telefono</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>

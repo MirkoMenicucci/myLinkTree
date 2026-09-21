@@ -27,10 +27,6 @@
     <span class="blob blob-c"></span>
   </div>
 
-  <div class="hero-banner" data-animate>
-    <img src="assets/mirko.jpg" alt="Foto di Mirko">
-    <div class="hero-banner-fade"></div>
-  </div>
 
   <main class="page">
 
@@ -39,6 +35,18 @@
       <p class="hero-subtitle" id="hero-subtitle">
         Leggo la Bibbia con chi ha voglia di capirla. Senza fretta e senza impegno.
       </p>
+    </section>
+
+    <section class="contact-top" id="contatti" data-animate>
+      <a id="whatsapp-link" class="contact-btn contact-btn-main" href="#" target="_blank" rel="noopener">
+        <i class="fa-brands fa-whatsapp"></i> Scrivimi su WhatsApp
+      </a>
+      <a id="phone-link" class="contact-btn" href="#">
+        <i class="fa-solid fa-phone"></i> <span id="phone-text">Telefono</span>
+      </a>
+      <a id="email-link" class="contact-btn" href="#">
+        <i class="fa-solid fa-envelope"></i> <span id="email-text">email@esempio.it</span>
+      </a>
     </section>
 
     <section class="offer-card" id="study-card" data-animate>
@@ -63,19 +71,15 @@
       </a>
 
       <div class="contact-inline">
-        <a id="whatsapp-link-alt" class="btn btn-whatsapp btn-full" href="#" target="_blank" rel="noopener">
-          <i class="fa-brands fa-whatsapp"></i> WhatsApp
+        <a id="whatsapp-link-alt" class="contact-btn contact-btn-main" href="#" target="_blank" rel="noopener">
+          <i class="fa-brands fa-whatsapp"></i> Scrivimi su WhatsApp
         </a>
-
-        <div class="contact-lines">
-          <a id="email-link-alt" class="contact-line" href="#">
-            <i class="fa-solid fa-envelope"></i> <span id="email-text-alt">email@esempio.it</span>
-          </a>
-
-          <a id="phone-link-alt" class="contact-line" href="#">
-            <i class="fa-solid fa-phone"></i> <span id="phone-text-alt">Telefono</span>
-          </a>
-        </div>
+        <a id="phone-link-alt" class="contact-btn" href="#">
+          <i class="fa-solid fa-phone"></i> <span id="phone-text-alt">Telefono</span>
+        </a>
+        <a id="email-link-alt" class="contact-btn" href="#">
+          <i class="fa-solid fa-envelope"></i> <span id="email-text-alt">email@esempio.it</span>
+        </a>
       </div>
     </section>
 
@@ -90,12 +94,24 @@
 
       <h2 class="event-theme-title" id="event-theme">Tema dell'evento</h2>
 
+      <p class="event-description" id="event-description" hidden></p>
+
+      <iframe class="event-map" id="event-map" title="Mappa dell'evento" hidden loading="lazy" allowfullscreen
+        referrerpolicy="strict-origin-when-cross-origin"></iframe>
+
+      <ul class="event-info" id="event-info" hidden>
+        <li id="event-address-row" hidden><i class="fa-solid fa-location-dot"></i> <span id="event-address"></span></li>
+        <li id="event-time-row" hidden><i class="fa-solid fa-clock"></i> <span id="event-time"></span></li>
+      </ul>
+
+      <p class="event-description"><strong>Non sei di Roma?</strong></p>
+
       <div class="cta-row" id="event-links">
         <a id="event-article-link" class="btn btn-secondary" href="#" target="_blank" rel="noopener">
           <i class="fa-solid fa-newspaper"></i> Articolo
         </a>
         <a id="event-nearest-link" class="btn btn-primary" href="#" target="_blank" rel="noopener">
-          <i class="fa-solid fa-location-dot"></i> Evento più vicino
+          <i class="fa-solid fa-location-dot"></i> Trova l'evento
         </a>
       </div>
     </section>
@@ -109,24 +125,6 @@
       </div>
       <i class="fa-solid fa-arrow-up-right-from-square resource-arrow"></i>
     </a>
-
-    <section class="contact-section" id="contatti" data-animate>
-      <p class="contact-heading">Scrivimi o chiamami</p>
-
-      <a id="whatsapp-link" class="btn btn-whatsapp btn-full" href="#" target="_blank" rel="noopener">
-        <i class="fa-brands fa-whatsapp"></i> WhatsApp
-      </a>
-
-      <div class="contact-lines">
-        <a id="email-link" class="contact-line" href="#">
-          <i class="fa-solid fa-envelope"></i> <span id="email-text">email@esempio.it</span>
-        </a>
-
-        <a id="phone-link" class="contact-line" href="#">
-          <i class="fa-solid fa-phone"></i> <span id="phone-text">Telefono</span>
-        </a>
-      </div>
-    </section>
 
   </main>
 

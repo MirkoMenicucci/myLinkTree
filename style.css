@@ -106,34 +106,6 @@ body {
   gap: 1.25rem;
 }
 
-/* ---------- Hero banner (full-bleed photo) ---------- */
-
-.hero-banner {
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  height: 46vh;
-  min-height: 300px;
-  max-height: 460px;
-  margin-top: env(safe-area-inset-top, 0px);
-  overflow: hidden;
-}
-
-.hero-banner img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 20%;
-  display: block;
-}
-
-.hero-banner-fade {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, transparent 45%, var(--bg-a) 96%);
-  pointer-events: none;
-}
-
 /* ---------- Hero ---------- */
 
 .hero {
@@ -142,7 +114,7 @@ body {
   align-items: center;
   text-align: center;
   gap: 0.6rem;
-  margin-top: -10.5rem;
+  margin-top: 3rem;
   margin-bottom: 0.5rem;
 }
 
@@ -169,8 +141,7 @@ body {
 
 /* ---------- Cards (shared) ---------- */
 
-.resource-card,
-.contact-section {
+.resource-card {
   background: var(--card-bg);
   border: 1px solid var(--card-border);
   box-shadow: var(--card-shadow);
@@ -231,6 +202,36 @@ body {
 .offer-card h2 strong {
   color: var(--color-accent);
   font-weight: 700;
+}
+
+.event-description {
+  margin: 0 0 1rem;
+  line-height: 1.6;
+  color: var(--text-body);
+}
+
+.event-info {
+  list-style: none;
+  margin: 0 0 1rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  color: var(--text-body);
+}
+
+.event-info i {
+  color: var(--color-accent);
+  width: 1.2em;
+}
+
+.event-map {
+  display: block;
+  width: 100%;
+  height: 220px;
+  border: 0;
+  border-radius: 12px;
+  margin: 0.25rem 0 1rem;
 }
 
 .event-theme-title {
@@ -509,32 +510,9 @@ body {
   border-top: 1px solid rgba(62, 124, 177, 0.22);
 }
 
-.contact-lines {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.6rem;
-}
 
-.contact-line {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: var(--color-primary);
-  font-weight: 600;
-  font-size: 0.82rem;
-  text-decoration: none;
-  white-space: nowrap;
-}
 
-.contact-line i {
-  color: var(--color-accent);
-  font-size: 0.8rem;
-}
 
-.contact-line:hover {
-  text-decoration: underline;
-}
 
 .trust-note i {
   flex-shrink: 0;
@@ -542,24 +520,46 @@ body {
   color: var(--color-accent);
 }
 
-/* ---------- Contact ---------- */
+/* ---------- Contact (top) ---------- */
 
-.contact-section {
-  padding: 1.4rem 1.3rem;
+.contact-top {
   display: flex;
   flex-direction: column;
-  align-items: stretch;
-  text-align: left;
-  gap: 1rem;
+  gap: 0.6rem;
 }
 
-.contact-heading {
-  margin: 0;
-  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
-  font-size: 1rem;
+.contact-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: 0.8rem 0.5rem;
+  border-radius: var(--radius-pill);
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  color: var(--color-primary);
   font-weight: 600;
-  color: var(--text-strong);
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.15s ease;
 }
+
+.contact-btn:hover {
+  background: #fff;
+}
+
+.contact-btn-main {
+  background: var(--color-whatsapp);
+  border-color: transparent;
+  color: #fff;
+}
+
+.contact-btn-main:hover {
+  background: var(--color-whatsapp-dark);
+}
+
+
 
 .cta-row {
   display: grid;

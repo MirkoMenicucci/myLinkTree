@@ -50,6 +50,25 @@ function loadEvent(event) {
   setText('event-theme', event.theme);
   setHref('event-nearest-link', event.nearestEventLink);
 
+  const desc = document.getElementById('event-description');
+  desc.textContent = event.description || '';
+  desc.hidden = !event.description;
+
+  const map = document.getElementById('event-map');
+  if (event.mapEmbed) {
+    map.src = event.mapEmbed;
+    map.hidden = false;
+  }
+
+  const time = event.startTime
+    ? `${formatEventDate(event.dateStart)}, ore ${event.startTime}`
+    : '';
+  [['address', event.address], ['time', time]].forEach(([id, text]) => {
+    setText(`event-${id}`, text);
+    document.getElementById(`event-${id}-row`).hidden = !text;
+  });
+  document.getElementById('event-info').hidden = !(event.address || time);
+
   const articleLink = document.getElementById('event-article-link');
   const linksRow = document.getElementById('event-links');
   if (event.articleLink) {

@@ -118,6 +118,7 @@ function loadContacts(contacts) {
   const hasAny = buttons.some((btn) => btn.href);
   document.getElementById('contatti').hidden = !hasAny || !showTopContacts;
   document.getElementById('contact-inline').hidden = !hasAny;
+  initContactFab(hasAny);
 
   ['', '-alt'].forEach((suffix) => {
     buttons.forEach(({ id, href, textId, text }) => {
@@ -129,6 +130,17 @@ function loadContacts(contacts) {
       if (textId) setText(textId + suffix, text);
     });
   });
+}
+
+// Pulsante fisso "Contattami": nascosto quando i contatti sono già visibili
+function initContactFab(hasAny) {
+  const fab = document.getElementById('contact-fab');
+  const target = document.getElementById('contact-inline');
+  fab.hidden = !hasAny;
+  if (!hasAny || !('IntersectionObserver' in window)) return;
+  new IntersectionObserver(([entry]) => {
+    fab.classList.toggle('is-away', entry.isIntersecting);
+  }).observe(target);
 }
 
 function loadContent() {

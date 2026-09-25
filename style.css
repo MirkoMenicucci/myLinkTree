@@ -45,6 +45,8 @@ body {
 
 html {
   scroll-behavior: smooth;
+  /* colore pieno: Safari lo usa per tingere le barre (il gradiente viene ignorato) */
+  background-color: var(--bg-a);
 }
 
 body {
@@ -102,7 +104,7 @@ body {
   z-index: 1;
   max-width: 480px;
   margin: 0 auto;
-  padding: 0 1.25rem 3rem;
+  padding: 0 1.25rem 6rem;
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
@@ -596,6 +598,37 @@ body {
   grid-template-columns: 1fr 1fr;
   gap: 0.75rem;
   width: 100%;
+}
+
+/* ---------- Contact FAB (fixed) ---------- */
+
+.contact-fab {
+  position: fixed;
+  z-index: 10;
+  left: 50%;
+  bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.6rem;
+  border-radius: var(--radius-pill);
+  background: var(--color-primary);
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 12px 28px -10px rgba(35, 44, 54, 0.55);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.contact-fab.is-away {
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, 1rem);
+}
+
+#contact-inline {
+  scroll-margin-top: 1.5rem;
 }
 
 /* ---------- Entrance animation ---------- */

@@ -7,6 +7,8 @@
   --color-accent-soft: rgba(62, 124, 177, 0.12);
   --color-whatsapp: #3F6B54;
   --color-whatsapp-dark: #325744;
+  --color-telegram: #3A6D96;
+  --color-telegram-dark: #2E5878;
 
   --bg-a: #F0F8FD;
   --bg-b: #D9EDFA;
@@ -236,6 +238,19 @@ body {
 
 .event-theme-title {
   margin: 0.5rem 0 0.75rem !important;
+}
+
+.event-intro {
+  margin-top: 0.5rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.event-intro:not([hidden]) + .event-theme-title {
+  margin-top: 0 !important;
 }
 
 .offer-card p {
@@ -510,9 +525,14 @@ body {
   border-top: 1px solid rgba(62, 124, 177, 0.22);
 }
 
-
-
-
+.contact-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  text-align: center;
+}
 
 .trust-note i {
   flex-shrink: 0;
@@ -557,6 +577,16 @@ body {
 
 .contact-btn-main:hover {
   background: var(--color-whatsapp-dark);
+}
+
+.contact-btn-telegram {
+  background: var(--color-telegram);
+  border-color: transparent;
+  color: #fff;
+}
+
+.contact-btn-telegram:hover {
+  background: var(--color-telegram-dark);
 }
 
 

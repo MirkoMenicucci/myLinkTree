@@ -12,6 +12,7 @@ window.SITE_DATA = {
   },
   "event": {
     "title": "Discorso Speciale",
+    "intro": "Ti invito al discorso speciale",
     "dateStart": "2026-09-26",
     "dateEnd": "2026-09-26",
     "theme": "Come può esserti di aiuto la bibbia?",
@@ -32,9 +33,11 @@ window.SITE_DATA = {
     "link": "https://www.jw.org/"
   },
   "contacts": {
-    "whatsappNumber": "393780114158",
-    "phoneNumber": "+393780114158",
-    "phoneDisplay": "378 011 4158",
+    "showTopContacts": false,
+    "whatsappNumber": "",
+    "telegramUsername": "mirko_jw",
+    "phoneNumber": "",
+    "phoneDisplay": "",
     "email": "mirko.service35@gmail.com"
   }
 };

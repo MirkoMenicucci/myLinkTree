@@ -48,6 +48,10 @@ function loadEvent(event) {
 
   setText('event-title', event.title);
   setText('event-theme', event.theme);
+
+  const intro = document.getElementById('event-intro');
+  setText('event-intro', event.intro);
+  intro.hidden = !event.intro;
   setHref('event-nearest-link', event.nearestEventLink);
 
   const desc = document.getElementById('event-description');
@@ -100,6 +104,33 @@ function loadEvent(event) {
   }
 }
 
+function loadContacts(contacts) {
+  const { showTopContacts = true, whatsappNumber, telegramUsername, phoneNumber, phoneDisplay, email } = contacts || {};
+  const telegram = (telegramUsername || '').trim().replace(/^@/, '');
+
+  const buttons = [
+    { id: 'whatsapp-link', href: whatsappNumber && `https://wa.me/${whatsappNumber}` },
+    { id: 'telegram-link', href: telegram && `https://t.me/${telegram}` },
+    { id: 'phone-link', href: phoneNumber && `tel:${phoneNumber}`, textId: 'phone-text', text: phoneDisplay || phoneNumber },
+    { id: 'email-link', href: email && `mailto:${email}`, textId: 'email-text', text: email },
+  ];
+
+  const hasAny = buttons.some((btn) => btn.href);
+  document.getElementById('contatti').hidden = !hasAny || !showTopContacts;
+  document.getElementById('contact-inline').hidden = !hasAny;
+
+  ['', '-alt'].forEach((suffix) => {
+    buttons.forEach(({ id, href, textId, text }) => {
+      const el = document.getElementById(id + suffix);
+      if (!el) return;
+      el.hidden = !href;
+      if (!href) return;
+      el.href = href;
+      if (textId) setText(textId + suffix, text);
+    });
+  });
+}
+
 function loadContent() {
   const data = window.SITE_DATA;
   if (!data) {
@@ -134,29 +165,7 @@ function loadContent() {
       setHref('resource-card', data.resource.link);
     }
 
-    if (data.contacts) {
-      const { whatsappNumber, phoneNumber, phoneDisplay, email } = data.contacts;
-
-      ['whatsapp-link', 'whatsapp-link-alt'].forEach((id) => {
-        if (whatsappNumber) setHref(id, `https://wa.me/${whatsappNumber}`);
-      });
-
-      ['phone-link', 'phone-link-alt'].forEach((id) => {
-        if (phoneNumber) setHref(id, `tel:${phoneNumber}`);
-      });
-
-      ['phone-text', 'phone-text-alt'].forEach((id) => {
-        if (phoneDisplay) setText(id, phoneDisplay);
-      });
-
-      ['email-link', 'email-link-alt'].forEach((id) => {
-        if (email) setHref(id, `mailto:${email}`);
-      });
-
-      ['email-text', 'email-text-alt'].forEach((id) => {
-        if (email) setText(id, email);
-      });
-    }
+    loadContacts(data.contacts);
   } catch (err) {
     console.warn('Errore durante l\'applicazione di data.js, uso i contenuti di default.', err);
   }

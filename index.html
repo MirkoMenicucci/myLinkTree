@@ -7,6 +7,7 @@
   <title>Mirko · Studio Biblico Gratuito</title>
   <meta name="description" content="Uno studio biblico gratuito, senza impegno, quando e come vuoi tu.">
   <meta name="theme-color" content="#0B4F8A">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,14 +38,17 @@
       </p>
     </section>
 
-    <section class="contact-top" id="contatti" data-animate>
-      <a id="whatsapp-link" class="contact-btn contact-btn-main" href="#" target="_blank" rel="noopener">
+    <section class="contact-top" id="contatti" data-animate hidden>
+      <a id="whatsapp-link" class="contact-btn contact-btn-main" href="#" target="_blank" rel="noopener" hidden>
         <i class="fa-brands fa-whatsapp"></i> Scrivimi su WhatsApp
       </a>
-      <a id="phone-link" class="contact-btn" href="#">
+      <a id="telegram-link" class="contact-btn contact-btn-telegram" href="#" target="_blank" rel="noopener" hidden>
+        <i class="fa-brands fa-telegram"></i> Scrivimi su Telegram
+      </a>
+      <a id="phone-link" class="contact-btn" href="#" hidden>
         <i class="fa-solid fa-phone"></i> <span id="phone-text">Telefono</span>
       </a>
-      <a id="email-link" class="contact-btn" href="#">
+      <a id="email-link" class="contact-btn" href="#" hidden>
         <i class="fa-solid fa-envelope"></i> <span id="email-text">email@esempio.it</span>
       </a>
     </section>
@@ -70,14 +74,18 @@
         </div>
       </a>
 
-      <div class="contact-inline">
-        <a id="whatsapp-link-alt" class="contact-btn contact-btn-main" href="#" target="_blank" rel="noopener">
+      <div class="contact-inline" id="contact-inline" hidden>
+        <span class="contact-label">I miei contatti</span>
+        <a id="whatsapp-link-alt" class="contact-btn contact-btn-main" href="#" target="_blank" rel="noopener" hidden>
           <i class="fa-brands fa-whatsapp"></i> Scrivimi su WhatsApp
         </a>
-        <a id="phone-link-alt" class="contact-btn" href="#">
+        <a id="telegram-link-alt" class="contact-btn contact-btn-telegram" href="#" target="_blank" rel="noopener" hidden>
+          <i class="fa-brands fa-telegram"></i> Scrivimi su Telegram
+        </a>
+        <a id="phone-link-alt" class="contact-btn" href="#" hidden>
           <i class="fa-solid fa-phone"></i> <span id="phone-text-alt">Telefono</span>
         </a>
-        <a id="email-link-alt" class="contact-btn" href="#">
+        <a id="email-link-alt" class="contact-btn" href="#" hidden>
           <i class="fa-solid fa-envelope"></i> <span id="email-text-alt">email@esempio.it</span>
         </a>
       </div>
@@ -92,6 +100,7 @@
         </span>
       </div>
 
+      <span class="event-intro" id="event-intro" hidden></span>
       <h2 class="event-theme-title" id="event-theme">Tema dell'evento</h2>
 
       <p class="event-description" id="event-description" hidden></p>
